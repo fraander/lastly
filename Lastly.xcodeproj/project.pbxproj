@@ -46,7 +46,6 @@
 		BDAD8EEC2C18A0DF00278317 = {
 			isa = PBXGroup;
 			children = (
-				BDAD8F0F2C18BDF400278317 /* PreviewSamples.swift */,
 				BDAD8EF72C18A0DF00278317 /* Lastly */,
 				BDAD8EF62C18A0DF00278317 /* Products */,
 			);
@@ -63,6 +62,7 @@
 		BDAD8EF72C18A0DF00278317 /* Lastly */ = {
 			isa = PBXGroup;
 			children = (
+				BDAD8F0F2C18BDF400278317 /* PreviewSamples.swift */,
 				BDAD8EF82C18A0DF00278317 /* LastlyApp.swift */,
 				BDAD8F0B2C18B6BD00278317 /* ContentView.swift */,
 				BDAD8F0D2C18BA6900278317 /* NavigationManager.swift */,
