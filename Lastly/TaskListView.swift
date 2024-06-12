@@ -10,7 +10,9 @@ import SwiftData
 
 struct TaskListView: View {
     
+    var addDestination: LastlyTag?
     var tasks: [LastlyTask]
+    var showAdd: Bool = true
     
     var body: some View {
         Group {
@@ -18,13 +20,15 @@ struct TaskListView: View {
                 TaskRowView(task: task)
             }
             
-            Text("Insert new task")
-                .italic()
-                .foregroundStyle(Color.red)
+            if showAdd {
+                TaskAddBar(destination: addDestination)
+            }
         }
     }
 }
 
 #Preview {
-    TaskListView(tasks: [LastlyTask.sample, LastlyTask.sample, LastlyTask.sample])
+    List {
+        TaskListView(tasks: [LastlyTask.sample, LastlyTask.sample, LastlyTask.sample])
+    }
 }

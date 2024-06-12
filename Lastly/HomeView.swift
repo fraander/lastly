@@ -18,8 +18,8 @@ struct HomeView: View {
         List {
             InboxView()
             
-            ForEach(tags) { lTag in
-                TagListView(tag: lTag)
+            ForEach(tags) { tag in
+                TagListView(tag: tag)
             }
         }
     }

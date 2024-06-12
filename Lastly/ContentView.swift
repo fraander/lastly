@@ -26,6 +26,12 @@ struct ContentView: View {
     @State var showNewTag: Bool = false
     @State var newTagTitle: String = ""
     
+    var newTagAction: some View {
+        Button("New tag", systemImage: "plus") {
+            showNewTag = true
+        }
+    }
+    
     var body: some View {
         TabView(selection: $nav.currentTab) {
             Tab("Home", systemImage: "house", value: CurrentTab.home) {
@@ -72,16 +78,14 @@ struct ContentView: View {
             .defaultVisibility(.hidden, for: .tabBar)
             #endif
             .sectionActions {
-                Button("New tag", systemImage: "plus") {
-                    showNewTag = true
-                }
+                newTagAction
                 #if os(macOS)
                 .popover(isPresented: $showNewTag) {
                     TextField("Title ...", text: $newTagTitle)
                         .frame(minWidth: 180)
                         .padding()
                 }
-                #endif
+#endif
             }
         }
         .toolbar {
@@ -110,7 +114,7 @@ struct ContentView: View {
     }
 }
 
-#Preview(traits: .sampleData) {
+#Preview(/*traits: .sampleData*/) {
     
     let nav = NavigationManager()
     

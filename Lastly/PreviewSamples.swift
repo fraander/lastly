@@ -9,24 +9,48 @@ import Foundation
 import SwiftUI
 import SwiftData
 
+struct Samples {
+    static let sampleTaskTitles = ["Mop the floors",
+                                   "Dust shelves",
+                                   "Organize pantry",
+                                   "Take out recycling",
+                                   "Clean the toilets",
+                                   "Water plants",
+                                   "Vacuum carpets",
+                                   "Run laundry",
+                                   "Wipe kitchen counters",
+                                   "Clear out refrigerator"]
+    
+    static func makeSuggestions(numbering: Int = 3) -> [String] {
+        var soFar: [String] = []
+        for _ in 0..<numbering {
+            soFar.append(Samples.suggestTitle(current: soFar))
+        }
+        
+        return soFar
+    }
+    
+    static func suggestTitle(current: String) -> String {
+        return suggestTitle(current: [current])
+    }
+    
+    static func suggestTitle(current: [String]) -> String {
+        let suggestion = Samples.sampleTaskTitles.randomElement() ?? ""
+        if !current.contains(suggestion) {
+            return suggestion
+        } else {
+            return suggestTitle(current: current)
+        }
+    }
+}
+
 @MainActor func makeSamples(in container: ModelContainer) {
     
     // **Sample tasks**
-    let sampleTitles = ["Mop the floors",
-    "Dust furniture and shelves",
-    "Organize a drawer or cabinet",
-    "Take out the trash and recycling",
-    "Clean the bathroom mirrors and faucets",
-    "Water houseplants",
-    "Vacuum carpets and rugs",
-    "Fold and put away laundry",
-    "Wipe down kitchen counters and appliances",
-    "Clean out the refrigerator"]
-    
     let formatter = ISO8601DateFormatter()
     formatter.formatOptions = [.withFullDate]
     
-    for sampleTitle in sampleTitles { // create 10 tasks
+    for sampleTitle in Samples.sampleTaskTitles { // create 10 tasks
         
         // with 0 -> 5 dates
         var dates: [Date] = []

@@ -14,9 +14,7 @@ struct InboxView: View {
     
     var body: some View {
         Section("Inbox") {
-            ForEach(tasks) { lTask in
-                TaskRowView(task: lTask)
-            }
+            TaskListView(tasks: tasks)
         }
     }
 }

@@ -12,30 +12,6 @@ enum DrawPhase {
     case drawOn, drawOff, wait
 }
 
-enum Focused: Hashable, CustomStringConvertible {
-    case task(_ task: LastlyTask), empty
-    
-    var description: String {
-        switch self {
-        case .task(let t):
-            t.title
-        case .empty:
-            ""
-        }
-    }
-}
-
-struct GlobalFocusedKey: FocusedValueKey {
-    typealias Value = Focused
-}
-
-extension FocusedValues {
-    var globalFocusedValue: GlobalFocusedKey.Value? {
-        get { self[GlobalFocusedKey.self] }
-        set { self[GlobalFocusedKey.self] = newValue }
-    }
-}
-
 struct TaskRowView: View {
     var task: LastlyTask
     
@@ -94,6 +70,7 @@ struct TaskRowView: View {
                     .font(.system(.caption, design: .monospaced))
                     .foregroundStyle(Color.secondary)
                     .contentTransition(.numericText())
+                    .padding(.trailing, 2)
             }
         }
         .padding(.vertical, 4)
@@ -127,7 +104,7 @@ struct TaskRowView: View {
     
     let nav = NavigationManager()
     
-    List(0..<1) { _ in
+    List(0..<5) { _ in
         TaskRowView(task: .sample)
     }
     .environmentObject(nav)

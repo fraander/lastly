@@ -13,9 +13,7 @@ struct ByDateView: View {
     @Query private var tasks: [LastlyTask]
     
     var body: some View {
-        ForEach(tasks.sorted().reversed()) { lTask in
-            TaskRowView(task: lTask)
-        }
+        TaskListView(tasks: tasks)
     }
 }
 

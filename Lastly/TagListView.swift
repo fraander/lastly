@@ -17,7 +17,7 @@ struct TagListView: View {
             if tag.tasks.isEmpty {
                 ContentUnavailableView("No tasks!", systemImage: "highlighter", description: Text("Add some tasks using the **Add Bar**!"))
             } else {
-                TaskListView(tasks: tag.tasks.sorted())
+                TaskListView(tasks: tag.tasks)
             }
         }
     }

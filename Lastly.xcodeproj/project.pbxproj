@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD02575F2C1A3DAE00514B96 /* TaskAddBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD02575E2C1A3DAD00514B96 /* TaskAddBar.swift */; };
+		BD0257612C1A3DC100514B96 /* Focused.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0257602C1A3DBE00514B96 /* Focused.swift */; };
 		BD719D112C19F893007B06F1 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D102C19F890007B06F1 /* TaskRowView.swift */; };
 		BD719D132C1A0FFB007B06F1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D122C1A0FF9007B06F1 /* SearchView.swift */; };
 		BD719D152C1A1013007B06F1 /* ByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D142C1A100D007B06F1 /* ByDateView.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD02575E2C1A3DAD00514B96 /* TaskAddBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAddBar.swift; sourceTree = "<group>"; };
+		BD0257602C1A3DBE00514B96 /* Focused.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focused.swift; sourceTree = "<group>"; };
 		BD719D102C19F890007B06F1 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 		BD719D122C1A0FF9007B06F1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BD719D142C1A100D007B06F1 /* ByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByDateView.swift; sourceTree = "<group>"; };
@@ -83,9 +87,11 @@
 				BD719D142C1A100D007B06F1 /* ByDateView.swift */,
 				BD719D122C1A0FF9007B06F1 /* SearchView.swift */,
 				BD719D102C19F890007B06F1 /* TaskRowView.swift */,
+				BD0257602C1A3DBE00514B96 /* Focused.swift */,
 				BDAD8F072C18A13E00278317 /* LastlyTask.swift */,
 				BD719D1A2C1A10A6007B06F1 /* TagListView.swift */,
 				BD719D212C1A12B8007B06F1 /* TaskListView.swift */,
+				BD02575E2C1A3DAD00514B96 /* TaskAddBar.swift */,
 				BDAD8F092C18B33800278317 /* LastlyTag.swift */,
 				BDAD8EFC2C18A0E100278317 /* Assets.xcassets */,
 				BDAD8EFE2C18A0E100278317 /* Lastly.entitlements */,
@@ -183,7 +189,9 @@
 				BDAD8EFB2C18A0DF00278317 /* HomeView.swift in Sources */,
 				BD719D1B2C1A10A6007B06F1 /* TagListView.swift in Sources */,
 				BDAD8EF92C18A0DF00278317 /* LastlyApp.swift in Sources */,
+				BD0257612C1A3DC100514B96 /* Focused.swift in Sources */,
 				BDAD8F0A2C18B33800278317 /* LastlyTag.swift in Sources */,
+				BD02575F2C1A3DAE00514B96 /* TaskAddBar.swift in Sources */,
 				BDAD8F0E2C18BA6900278317 /* NavigationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

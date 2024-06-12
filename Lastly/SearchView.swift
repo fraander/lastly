@@ -29,10 +29,7 @@ struct SearchView: View {
                 )
             } else {
                 List {
-                    
-                    ForEach(searched) { lTask in
-                        TaskRowView(task: lTask)
-                    }
+                    TaskListView(tasks: searched, showAdd: false)
                 }
             }
         }
