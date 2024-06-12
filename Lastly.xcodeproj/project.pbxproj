@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD719D112C19F893007B06F1 /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D102C19F890007B06F1 /* TaskRowView.swift */; };
+		BD719D132C1A0FFB007B06F1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D122C1A0FF9007B06F1 /* SearchView.swift */; };
+		BD719D152C1A1013007B06F1 /* ByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D142C1A100D007B06F1 /* ByDateView.swift */; };
+		BD719D1B2C1A10A6007B06F1 /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D1A2C1A10A6007B06F1 /* TagListView.swift */; };
+		BD719D1D2C1A110C007B06F1 /* InboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D1C2C1A110B007B06F1 /* InboxView.swift */; };
+		BD719D222C1A12B8007B06F1 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD719D212C1A12B8007B06F1 /* TaskListView.swift */; };
 		BDAD8EF92C18A0DF00278317 /* LastlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD8EF82C18A0DF00278317 /* LastlyApp.swift */; };
 		BDAD8EFB2C18A0DF00278317 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD8EFA2C18A0DF00278317 /* HomeView.swift */; };
 		BDAD8EFD2C18A0E100278317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDAD8EFC2C18A0E100278317 /* Assets.xcassets */; };
@@ -19,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD719D102C19F890007B06F1 /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
+		BD719D122C1A0FF9007B06F1 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		BD719D142C1A100D007B06F1 /* ByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByDateView.swift; sourceTree = "<group>"; };
+		BD719D1A2C1A10A6007B06F1 /* TagListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
+		BD719D1C2C1A110B007B06F1 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		BD719D212C1A12B8007B06F1 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		BDAD8EF52C18A0DF00278317 /* Lastly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lastly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAD8EF82C18A0DF00278317 /* LastlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastlyApp.swift; sourceTree = "<group>"; };
 		BDAD8EFA2C18A0DF00278317 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -67,7 +79,13 @@
 				BDAD8F0B2C18B6BD00278317 /* ContentView.swift */,
 				BDAD8F0D2C18BA6900278317 /* NavigationManager.swift */,
 				BDAD8EFA2C18A0DF00278317 /* HomeView.swift */,
+				BD719D1C2C1A110B007B06F1 /* InboxView.swift */,
+				BD719D142C1A100D007B06F1 /* ByDateView.swift */,
+				BD719D122C1A0FF9007B06F1 /* SearchView.swift */,
+				BD719D102C19F890007B06F1 /* TaskRowView.swift */,
 				BDAD8F072C18A13E00278317 /* LastlyTask.swift */,
+				BD719D1A2C1A10A6007B06F1 /* TagListView.swift */,
+				BD719D212C1A12B8007B06F1 /* TaskListView.swift */,
 				BDAD8F092C18B33800278317 /* LastlyTag.swift */,
 				BDAD8EFC2C18A0E100278317 /* Assets.xcassets */,
 				BDAD8EFE2C18A0E100278317 /* Lastly.entitlements */,
@@ -155,9 +173,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAD8F082C18A13E00278317 /* LastlyTask.swift in Sources */,
+				BD719D1D2C1A110C007B06F1 /* InboxView.swift in Sources */,
+				BD719D152C1A1013007B06F1 /* ByDateView.swift in Sources */,
+				BD719D132C1A0FFB007B06F1 /* SearchView.swift in Sources */,
 				BDAD8F102C18BDF400278317 /* PreviewSamples.swift in Sources */,
+				BD719D112C19F893007B06F1 /* TaskRowView.swift in Sources */,
 				BDAD8F0C2C18B6BD00278317 /* ContentView.swift in Sources */,
+				BD719D222C1A12B8007B06F1 /* TaskListView.swift in Sources */,
 				BDAD8EFB2C18A0DF00278317 /* HomeView.swift in Sources */,
+				BD719D1B2C1A10A6007B06F1 /* TagListView.swift in Sources */,
 				BDAD8EF92C18A0DF00278317 /* LastlyApp.swift in Sources */,
 				BDAD8F0A2C18B33800278317 /* LastlyTag.swift in Sources */,
 				BDAD8F0E2C18BA6900278317 /* NavigationManager.swift in Sources */,

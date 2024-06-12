@@ -11,6 +11,9 @@ import SwiftUI
 
 @Model
 class LastlyTask: Identifiable, Comparable {
+    
+    static let sample = LastlyTask(completions: [Date(timeIntervalSinceNow: -329145757), Date(timeIntervalSinceNow: -323297)], title: "Take out the trash")
+    
     static func < (lhs: LastlyTask, rhs: LastlyTask) -> Bool {
         lhs.completions.sorted().first ?? Date() < rhs.completions.sorted().first ?? Date()
     }
@@ -27,6 +30,4 @@ class LastlyTask: Identifiable, Comparable {
         self.title = title
         self.tags = []
     }
-    
-    
 }

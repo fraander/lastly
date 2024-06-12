@@ -12,6 +12,7 @@ struct ContentView: View {
     
     @EnvironmentObject var nav: NavigationManager
     @Environment(\.modelContext) var modelContext
+    @FocusedValue(\.globalFocusedValue) var gfv
     
     #if os(iOS)
     @AppStorage("TabViewCustomization") private var tabViewCustomization: TabViewCustomization
@@ -81,6 +82,11 @@ struct ContentView: View {
                         .padding()
                 }
                 #endif
+            }
+        }
+        .toolbar {
+            if let gfvSafe = gfv {
+                Text(gfvSafe.description)
             }
         }
         .tabViewStyle(.sidebarAdaptable)
