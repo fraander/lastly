@@ -21,6 +21,7 @@ struct ContentView: View {
     @Query(sort: [SortDescriptor(\LastlyTag.title, order: .forward)]) private var tags: [LastlyTag]
     @Query(filter: #Predicate<LastlyTask> {$0.tags.isEmpty}) private var tasks: [LastlyTask]
     
+    @State var showInspector = false // TODO: setup inspector
     @State var selection: UUID?
     
     @State var showNewTag: Bool = false
@@ -33,6 +34,7 @@ struct ContentView: View {
     }
     
     var body: some View {
+        
         TabView(selection: $nav.currentTab) {
             Tab("Home", systemImage: "house", value: CurrentTab.home) {
                 HomeView()
@@ -88,15 +90,11 @@ struct ContentView: View {
 #endif
             }
         }
-        .toolbar {
-            if let gfvSafe = gfv {
-                Text(gfvSafe.description)
-            }
-        }
         .tabViewStyle(.sidebarAdaptable)
 #if os(iOS)
         .tabViewCustomization($tabViewCustomization)
 #endif
+        // TODO: add inspector
 #if os(iOS)
         .sheet(isPresented: $showNewTag) {
             TextField("Title ...", text: $newTagTitle)

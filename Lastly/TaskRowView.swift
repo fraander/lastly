@@ -65,13 +65,17 @@ struct TaskRowView: View {
             
             Spacer()
             
-            if let first = task.completions.sorted().last {
-                Text(Date.now, format: .reference(to: first, allowedFields: [.day, .minute,. hour, .month], thresholdField: .month))
-                    .font(.system(.caption, design: .monospaced))
-                    .foregroundStyle(Color.secondary)
-                    .contentTransition(.numericText())
-                    .padding(.trailing, 2)
+            Group {
+                if let mostRecent = task.completions.sorted().last {
+                    Text(Date.now, format: .reference(to: mostRecent, allowedFields: [.day, .minute,. hour, .month], thresholdField: .month))
+                } else {
+                    Text("never")
+                }
             }
+            .font(.system(.caption, design: .monospaced))
+            .foregroundStyle(Color.secondary)
+            .contentTransition(.numericText())
+            .padding(.trailing, 2)
         }
         .padding(.vertical, 4)
         .swipeActions(edge: .leading, allowsFullSwipe: true) {
@@ -104,8 +108,9 @@ struct TaskRowView: View {
     
     let nav = NavigationManager()
     
-    List(0..<5) { _ in
+    List(0..<3) { _ in
         TaskRowView(task: .sample)
+        TaskRowView(task: LastlyTask(title: "Testing"))
     }
     .environmentObject(nav)
 }
