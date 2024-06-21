@@ -12,6 +12,7 @@ struct SearchView: View {
     
     @State var query: String = ""
     @Query private var tasks: [LastlyTask]
+    @EnvironmentObject var nav: NavigationManager
     
     var searched: [LastlyTask] {
         return tasks.sorted().reversed().filter {
@@ -28,7 +29,7 @@ struct SearchView: View {
                     systemImage: "doc.text.magnifyingglass"
                 )
             } else {
-                List {
+                List(selection: $nav.currentTasks) {
                     TaskListView(tasks: searched, showAdd: false)
                 }
             }

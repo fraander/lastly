@@ -14,11 +14,12 @@ struct TagListView: View {
     
     var body: some View {
         Section(tag.title) {
-            if tag.tasks.isEmpty {
-                ContentUnavailableView("No tasks!", systemImage: "highlighter", description: Text("Add some tasks using the **Add Bar**!"))
-            } else {
-                TaskListView(tasks: tag.tasks)
-            }
+//            if tag.tasks.isEmpty {
+//                    ContentUnavailableView("No tasks!", systemImage: "highlighter", description: Text("Add some tasks using the **Add Bar**!"))
+//                    .frame(maxWidth: .infinity, alignment: .center)
+//            } else {
+            TaskListView(tasks: tag.tasks, addDestination: tag)
+//            }
         }
     }
 }

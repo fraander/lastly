@@ -10,14 +10,15 @@ import SwiftData
 
 struct TaskListView: View {
     
-    var addDestination: LastlyTag?
     var tasks: [LastlyTask]
+    var addDestination: LastlyTag?
     var showAdd: Bool = true
     
     var body: some View {
         Group {
             ForEach(tasks) { task in
                 TaskRowView(task: task)
+                    .tag(task)
             }
             
             if showAdd {

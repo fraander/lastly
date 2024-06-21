@@ -14,4 +14,5 @@ enum CurrentTab: Hashable {
 @Observable
 class NavigationManager: ObservableObject {
     var currentTab: CurrentTab? = nil
+    var currentTasks: Set<LastlyTask> = Set()
 }
