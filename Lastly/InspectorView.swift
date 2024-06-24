@@ -10,51 +10,61 @@ import SwiftData
 
 struct InspectorView: View {
     
-    @EnvironmentObject var nav: NavigationManager
+    var task: LastlyTask
     @Query var tags: [LastlyTag]
-        
+    
+    @State var selectedTags: Set<LastlyTag> = []
+    @State var showTagsPicker = false
+    
+    var hasTags: Bool {
+        return !task.tags.isEmpty
+    }
+    
     var currentTagsListFormat: String {
-        
-        let defaultMessage = "No tags"
-        
-        if let current = nav.currentTasks.first?.tags {
-            if current.isEmpty {
-                return defaultMessage
-            } else {
-                return ListFormatter.localizedString(byJoining: current.map(\.title))
-            }
+        if task.tags.isEmpty {
+            return "No tags"
+        } else {
+            return ListFormatter.localizedString(byJoining: task.tags.map(\.title))
         }
-        
-        return defaultMessage
     }
     
     var body: some View {
         Group {
-            if let inspecting = nav.currentTasks.first {
-                Form {
-                    Section("Completions") {
-                        List {
-                            if inspecting.completions.isEmpty {
-                                Text("This task has never been completed.")
-                            } else {
-                                ForEach(inspecting.completions, id: \.self) { completion in
-                                    Text(Date.now, format: .reference(to: completion, allowedFields: [.day, .minute,. hour, .month], thresholdField: .month))
+            Form {
+                Section("Completions") {
+                    List {
+                        if task.completions.isEmpty {
+                            Text("This task has never been completed.")
+                        } else {
+                            ForEach(task.completions, id: \.self) { completion in
+                                Text(Date.now, format: .reference(to: completion, allowedFields: [.day, .minute,. hour, .month], thresholdField: .month))
+                            }
+                        }
+                    }
+                }
+                
+                Section("Tags") {
+                    Button("\(currentTagsListFormat)", systemImage: hasTags ? "tag.fill" : "tag") { showTagsPicker = true }
+                        .popover(isPresented: $showTagsPicker) {
+                            List(tags) { tag in
+                                Button(
+                                    tag.title,
+                                    systemImage: task.tags.contains(tag) ? "checkmark.circle.fill" : "checkmark.circle"
+                                ) {
+                                    if task.tags.contains(tag) {
+                                        task.tags.removeAll { lt in
+                                            lt.id == tag.id
+                                        }
+                                    } else {
+                                        task.tags.append(tag)
+                                    }
                                 }
+                                .buttonStyle(.plain)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             }
                         }
-                    }
-                    
-                    Section("Tags") {
-                        Menu("\(currentTagsListFormat)", systemImage: "tag") {
-                            ForEach(tags) { tag in
-                                Text(tag.title)
-                                #warning("doesn't work yet-- have to make it so clicking adds or removes 👍")
-                            }
-                        }
-                    }
                 }
             }
         }
     }
 }
-

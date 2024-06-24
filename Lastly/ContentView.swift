@@ -121,7 +121,7 @@ struct ContentView: View {
                 .padding()
         }
         .inspector(isPresented: $showInspector) {
-            InspectorView()
+            InspectorView(task: nav.currentTasks.first ?? LastlyTask(title: ""))
         }
     }
 }
