@@ -1,0 +1,79 @@
+{
+  "main": {
+    "id": "ce306b2735649e6b",
+    "type": "split",
+    "children": [
+      {
+        "id": "8a59f0239e4be1d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32daebaa18c54ad7",
+            "type": "leaf",
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "TODO.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    true
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6a048ca5a3d0948d",
+    "type": "split",
+    "children": [],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "86263183401ec911",
+    "type": "split",
+    "children": [
+      {
+        "id": "5576c6428494cabe",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0605f334aa96bad8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "TODO.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "32daebaa18c54ad7",
+  "lastOpenFiles": [
+    "Untitled.canvas",
+    "TODO.md"
+  ]
+}
