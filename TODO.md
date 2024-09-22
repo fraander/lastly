@@ -6,23 +6,27 @@ kanban-plugin: board
 
 ## Backlog
 
-- [ ] Fix Tabs (not stable enough iOS 18)
-- [ ] Update default tasks to match most common household chores (Healthy Homes Checklist?)
-- [ ] Launch to TestFlight
+- [ ] Launch to App Store
+- [ ] Optimize iPadOS version
 
 
 ## WIP
 
-- [ ] Dark & tinting friendly icons
+- [ ] Create a Tinder-style Next Time view that keeps in Next Time or moves to Today
 
 
 ## Polish
 
 
 
-## Done
+## Done / Cancelled
 
 **Complete**
+- [x] Remove checkboxes from non-today list
+- [x] Add "Push all completed" option
+- [x] Hide AddBar when editing a Grocery
+- [x] Remove Next Time list
+- [x] Remove Tips, still need lots of work
 
 
 ***
@@ -33,6 +37,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false],"show-checkboxes":true}
+{"kanban-plugin":"board","list-collapse":[false,false,false,true],"show-checkboxes":true}
 ```
 %%
